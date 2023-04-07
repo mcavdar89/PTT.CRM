@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PTT.CRM.Model.Entities
 {
-    public class MesajTur:BaseEntity
+    public class MesajDurum : BaseEntity
     {
         public int Id { get; set; }
         public string Kod { get; set; }
