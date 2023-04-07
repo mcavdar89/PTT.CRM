@@ -26,7 +26,7 @@ namespace PTT.CRM.BL.Concrate
 
         public Result Login(string kullaniciAdi)
         {
-            var item = _repository.Get<Kullanici>(d=>d.KullaniciAdi == kullaniciAdi);
+            var item = _repository.GetToDto<Kullanici,KullaniciDto>(d=>d.KullaniciAdi == kullaniciAdi);
             if(item == null)
             {
                 return new Result(0, "Kullanici buluanamadı"); //{ Status = 0, Mesaj = "Kullanici buluanamadı" };
@@ -37,7 +37,7 @@ namespace PTT.CRM.BL.Concrate
             return new Result(1, "Başarılı", token);
         }
 
-        private string GenerateToken(Kullanici user)
+        private string GenerateToken(KullaniciDto user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

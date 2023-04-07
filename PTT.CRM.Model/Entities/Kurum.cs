@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace PTT.CRM.Model.Entities
 {
-    public class Musteri:BaseEntity
+    public class Kurum:BaseEntity
     {
         public int Id { get; set; }
-        public short KimlikTurId { get; set; }
-        public string KimlikNo { get; set; }
+        public string VergiNo { get; set; }
         public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string EPosta { get; set; }
-        public string GSM { get; set; }
+        public string Adres { get; set; }
+        public short SehirId { get; set; }
 
+        public Sehir Sehir { get; set; }
 
         public virtual ICollection<Mesaj> Mesaj { get; set; }
 

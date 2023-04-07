@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using PTT.CRM.Model.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 //services
@@ -72,8 +73,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
-
 builder.Services.AddAuthorization();
+
+builder.Services.AddAutoMapper(typeof(PTT_CRMProfile));
+
 
 var app = builder.Build();
 //midleware
