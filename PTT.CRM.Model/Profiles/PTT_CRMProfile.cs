@@ -15,6 +15,18 @@ namespace PTT.CRM.Model.Profiles
         {
             CreateMap<Kullanici, KullaniciDto>();
             CreateMap<KullaniciDto, Kullanici>();
+
+            CreateMap<Mesaj, MesajDto>()
+               .ForMember(dest => dest.MusteriAd, opts => opts.MapFrom(src => src.Musteri.Ad))
+               .ForMember(dest => dest.MusteriSoyad, opts => opts.MapFrom(src => src.Musteri.Soyad))
+               .ForMember(dest => dest.KurumAd, opts => opts.MapFrom(src => src.Kurum.Ad))
+               .ForMember(dest => dest.MesajTurKod, opts => opts.MapFrom(src => src.MesajTur.Kod))
+               .ForMember(dest => dest.HizmetTipKod, opts => opts.MapFrom(src => src.HizmetTip.Kod))
+               .ForMember(dest => dest.HizmetTipAltKod, opts => opts.MapFrom(src => src.HizmetTipAlt.Kod))
+               .ForMember(dest => dest.MesajDurumKod, opts => opts.MapFrom(src => src.MesajDurum.Kod))
+                ;
+
+
         }
     }
 }

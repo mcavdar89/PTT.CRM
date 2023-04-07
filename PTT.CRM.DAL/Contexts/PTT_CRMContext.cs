@@ -16,5 +16,12 @@ namespace PTT.CRM.DAL.Contexts
         }
         DbSet<Musteri> Musteri { get; set; }
         DbSet<Kullanici> Kullanici { get; set; }
+        DbSet<Mesaj> Mesaj { get; set; }
+        DbSet<Sehir> Sehir { get; set; }
+        DbSet<Kurum> Kurum { get; set; }
+        DbSet<HizmetTip> HizmetTip { get; set; }
+        DbSet<HizmetTipAlt> HizmetTipAlt { get; set; }
+        DbSet<MesajTur> MesajTur { get; set; }
+        DbSet<MesajDurum> MesajDurum { get; set; }
     }
 }
