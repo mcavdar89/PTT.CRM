@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PTT.CRM.BL.Abstruct;
+using System.Data;
 
 namespace PTT.CRM.API.Controllers
 {
+    [Authorize(Roles="sysadmin")]
     [Route("api/[controller]")]
     [ApiController]
     public class MusteriController : ControllerBase

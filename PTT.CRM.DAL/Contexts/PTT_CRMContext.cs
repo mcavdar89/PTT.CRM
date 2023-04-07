@@ -15,5 +15,6 @@ namespace PTT.CRM.DAL.Contexts
             
         }
         DbSet<Musteri> Musteri { get; set; }
+        DbSet<Kullanici> Kullanici { get; set; }
     }
 }
