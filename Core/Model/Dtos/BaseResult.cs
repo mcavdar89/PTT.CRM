@@ -25,7 +25,10 @@ namespace Core.Model.Dtos
         {
             Data = data;
         }
-
+        public BaseResult(object data) : this(1, "Başarılı")
+        {
+            Data = data;
+        }
         public short Status { get; set; } //0 hatalı,1 başarılı
         public string Mesaj { get; set; }
 

@@ -9,7 +9,7 @@ namespace PTT.CRM.Model.Entities
 {
     public class MesajTur:BaseEntity
     {
-        public int Id { get; set; }
+        public short Id { get; set; }
         public string Kod { get; set; }
 
         public virtual ICollection<Mesaj> Mesaj { get; set; }

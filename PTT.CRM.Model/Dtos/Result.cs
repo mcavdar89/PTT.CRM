@@ -17,6 +17,10 @@ namespace PTT.CRM.Model.Dtos
         {
         }
 
+        public Result(object data) : base(data)
+        {
+        }
+
         public Result(short status, string mesaj) : base(status, mesaj)
         {
         }

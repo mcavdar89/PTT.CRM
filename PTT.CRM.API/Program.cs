@@ -52,16 +52,19 @@ builder.Services.AddSwaggerGen(option =>
 );
 
 
+#region Injection
 builder.Services.AddDbContext<PTT_CRMContext>(option =>
-    option.UseSqlServer(builder.Configuration.GetConnectionString("PTT_CRMConStr"))
+option.UseSqlServer(builder.Configuration.GetConnectionString("PTT_CRMConStr"))
 );
 
 
 builder.Services.AddScoped<IMusteriServis, MusteriServis>();
 builder.Services.AddScoped<IAccountServis, AccountServis>();
+builder.Services.AddScoped<IMesajServis, MesajServis>();
 builder.Services.AddScoped<IPTT_CRMRepository, PTT_CRMRepository>();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -77,6 +80,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddAutoMapper(typeof(PTT_CRMProfile));
 
+#endregion
 
 var app = builder.Build();
 //midleware

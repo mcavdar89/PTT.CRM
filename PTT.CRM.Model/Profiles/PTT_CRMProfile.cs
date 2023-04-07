@@ -25,6 +25,7 @@ namespace PTT.CRM.Model.Profiles
                .ForMember(dest => dest.HizmetTipAltKod, opts => opts.MapFrom(src => src.HizmetTipAlt.Kod))
                .ForMember(dest => dest.MesajDurumKod, opts => opts.MapFrom(src => src.MesajDurum.Kod))
                 ;
+            CreateMap<MesajDto, Mesaj>();
 
 
         }
